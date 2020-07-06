@@ -1,0 +1,63 @@
+@import "config.sass"
+
+.js-accordion
+    display: none
+
+.question-block
+    &__title
+        font-size: 0
+        padding: 5px 10px
+        background: $orange1
+
+    &__icon
+        display: inline-block
+        width: 30px
+        height: 30px
+        vertical-align: middle
+        background: url('/local/static/assets/img/blocks/article-picture-block/question-block__title.svg') no-repeat
+        background-size: 100%
+
+
+    &__desc
+        color: $white
+        display: inline-block
+        font: 22px/122% $font
+        margin-left: 10px
+        vertical-align: middle
+        +max-width($mobile)
+            font: 16px/122% $font
+
+
+
+.question-item
+    margin-top: 20px
+    &__title
+        background: $light-bg
+        padding: 9px 30px
+        font: 16px/122% $font
+        color: $article
+        position: relative
+        border-radius: 4px
+        cursor: pointer
+        +max-width($mobile-book)
+            padding: 9px 40px 9px 30px
+            font: 14px/122% $font
+
+        &:after
+            content: '›'
+            position: absolute
+            right: 13px
+            top: calc(50% - 14px)
+            font-size: 40px
+            transition: transform .25s
+            transform: rotate(90deg)
+            height: 27px
+
+        &.active
+            &:after
+                transform: rotate(-90deg)
+
+    &__body
+        margin-top: 15px
+        +max-width($mobile-book)
+            margin-top: 10px
